@@ -18,6 +18,8 @@ class NepalipatraSpider(scrapy.Spider):
 
         if category == "society":
             self.start_urls = [base_url.format("trend/society")]
+        elif category == "politics":
+            self.start_urls = [base_url.format("trend/politics")]
 
         self.category_path = os.path.join(NepalipatraSpider.base_path, category)
 
