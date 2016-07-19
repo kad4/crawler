@@ -14,12 +14,9 @@ class NepalipatraSpider(scrapy.Spider):
 
     def __init__(self, category, *args, **kwargs):
         super(NepalipatraSpider, self).__init__(*args, **kwargs)
-        base_url = "http://www.nepalipatra.com/category/news/{}"
+        base_url = "http://www.nepalipatra.com/category/news/trend/{}"
 
-        if category == "society":
-            self.start_urls = [base_url.format("trend/society")]
-        elif category == "politics":
-            self.start_urls = [base_url.format("trend/politics")]
+        self.start_urls = [base_url.format(category)]
 
         self.category_path = os.path.join(NepalipatraSpider.base_path, category)
 
