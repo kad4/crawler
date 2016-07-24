@@ -10,7 +10,7 @@ class UjyaaloonlineSpider(scrapy.Spider):
 
     item_selector = "#texts_aboutus > ul.news_list_full > li > a:nth-child(1)::attr('href')"
     content_selector = "#texts_aboutus > div > div.detailbox > p::text"
-    next_page_selector = "#texts_aboutus > ul.pagination > li:nth-last-child(2) > a::attr('href')"
+    next_page_selector = "#texts_aboutus > ul.pagination > li:nth-last-child(1) > a::attr('href')"
 
     def __init__(self, category, *args, **kwargs):
         super(UjyaaloonlineSpider, self).__init__(*args, **kwargs)
