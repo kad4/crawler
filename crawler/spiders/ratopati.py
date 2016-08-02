@@ -15,10 +15,12 @@ class RatopatiSpider(scrapy.Spider):
 
     def __init__(self, category, *args, **kwargs):
         super(RatopatiSpider, self).__init__(*args, **kwargs)
-        base_url = "http://www.ratopati.com/{}"
+        base_url = "http://www.ratopati.com/{}/"
 
         if category == "literature":
             self.start_urls = [base_url.format("साहित्य")]
+        elif category == "health":
+            self.start_urls = [base_url.format("स्वास्थ्य-शैली")]
 
         self.category_path = os.path.join(RatopatiSpider.base_path, category)
 
